@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
+import SocialSignInButtons from '../components/SocialSignInButtons';
 
 const logo = require('../../assets/images/logo.png');
 
@@ -16,14 +17,6 @@ const SignInScreen = () => {
 
   const handleForgotPassword = () => {
     console.log('User pressed Forgot Password');
-  };
-
-  const handleSignInFacebook = () => {
-    console.log('User pressed Sign In with Facebook');
-  };
-
-  const handleSignInGoogle = () => {
-    console.log('User pressed Sign In with Google');
   };
 
   const handleDontHaveAnAccount = () => {
@@ -52,18 +45,7 @@ const SignInScreen = () => {
             onPressButton={handleForgotPassword}
             type="Secondary"
           />
-          <CustomButton
-            text="Sign In with Facebook"
-            onPressButton={handleSignInFacebook}
-            backgroundColor="#e7e8f6"
-            textColor="#4b67aa"
-          />
-          <CustomButton
-            text="Sign In with Google"
-            onPressButton={handleSignInGoogle}
-            backgroundColor="#f3e9ea"
-            textColor="#cd6960"
-          />
+          <SocialSignInButtons />
           <CustomButton
             text="Don't have an account? Create one"
             onPressButton={handleDontHaveAnAccount}
@@ -91,6 +73,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     marginBottom: 48,
+    tintColor: '#061c5b',
   },
   elements: {
     width: '100%',
