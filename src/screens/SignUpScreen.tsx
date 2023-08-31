@@ -56,7 +56,7 @@ const SignUpScreen = () => {
           <CustomButton
             text="Have an account? Sign In"
             onPressButton={handleHaveAnAccount}
-            type="Secondary"
+            type="Tertiary"
           />
         </View>
       </View>

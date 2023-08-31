@@ -4,7 +4,7 @@ import React from 'react';
 type CustomButtonProps = {
   text: string;
   onPressButton: () => void;
-  type?: 'Primary' | 'Secondary';
+  type?: 'Primary' | 'Secondary' | 'Tertiary';
   backgroundColor?: string;
   textColor?: string;
 };
@@ -52,11 +52,18 @@ const styles = StyleSheet.create({
   buttonPrimary: {
     backgroundColor: '#3971f4',
   },
-  buttonSecondary: {},
+  buttonSecondary: {
+    borderWidth: 1,
+    borderColor: '#3871f4',
+  },
+  buttonTertiary: {},
   textPrimary: {
     color: 'white',
   },
   textSecondary: {
+    color: '#3871f4',
+  },
+  textTertiary: {
     color: '#9096ad',
   },
 });

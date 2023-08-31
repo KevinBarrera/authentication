@@ -43,13 +43,13 @@ const SignInScreen = () => {
           <CustomButton
             text="Forgot Password?"
             onPressButton={handleForgotPassword}
-            type="Secondary"
+            type="Tertiary"
           />
           <SocialSignInButtons />
           <CustomButton
             text="Don't have an account? Create one"
             onPressButton={handleDontHaveAnAccount}
-            type="Secondary"
+            type="Tertiary"
           />
         </View>
       </View>
