@@ -4,6 +4,9 @@ import React, {useState} from 'react';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
 import SocialSignInButtons from '../components/SocialSignInButtons';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {AuthenticationStackParamList} from '../navigation/params';
 
 const SignUpScreen = () => {
   const [username, setUsername] = useState('');
@@ -11,12 +14,16 @@ const SignUpScreen = () => {
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
 
+  const navigation =
+    useNavigation<NativeStackNavigationProp<AuthenticationStackParamList>>();
+
   const handleRegister = () => {
-    console.log('User pressed Sign In');
+    console.log('Send data to BE and to send a confirmation code for email');
+    navigation.navigate('ConfirmEmail');
   };
 
   const handleHaveAnAccount = () => {
-    console.log('User pressed do have an account');
+    navigation.navigate('SignIn');
   };
 
   return (

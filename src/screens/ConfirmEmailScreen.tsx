@@ -3,20 +3,27 @@ import React, {useState} from 'react';
 
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {AuthenticationStackParamList} from '../navigation/params';
 
 const ConfirmEmailScreen = () => {
   const [code, setCode] = useState('');
 
+  const navigation =
+    useNavigation<NativeStackNavigationProp<AuthenticationStackParamList>>();
+
   const handleConfirmEmail = () => {
-    console.log('User pressed Sign In');
+    console.log('Communicate with BE to confirm email and create the account');
+    navigation.navigate('Home');
   };
 
   const handleResendCode = () => {
-    console.log('User pressed resend code');
+    console.log('Communicate with BE to send a new code');
   };
 
   const handleBackToSignIn = () => {
-    console.log('User pressed do have an account');
+    navigation.navigate('SignIn');
   };
 
   return (

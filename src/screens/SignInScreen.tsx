@@ -4,6 +4,9 @@ import React, {useState} from 'react';
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
 import SocialSignInButtons from '../components/SocialSignInButtons';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {AuthenticationStackParamList} from '../navigation/params';
 
 const logo = require('../../assets/images/logo.png');
 
@@ -11,16 +14,20 @@ const SignInScreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigation =
+    useNavigation<NativeStackNavigationProp<AuthenticationStackParamList>>();
+
   const handleSignIn = () => {
-    console.log('User pressed Sign In');
+    console.log('Validate with BE username and Password');
+    navigation.navigate('Home');
   };
 
   const handleForgotPassword = () => {
-    console.log('User pressed Forgot Password');
+    navigation.navigate('ForgotPassword');
   };
 
   const handleDontHaveAnAccount = () => {
-    console.log('User pressed do not have an account');
+    navigation.navigate('SignUp');
   };
 
   return (

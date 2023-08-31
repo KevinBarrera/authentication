@@ -3,17 +3,23 @@ import React, {useState} from 'react';
 
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {AuthenticationStackParamList} from '../navigation/params';
 
 const ResetPasswordScreen = () => {
   const [code, setCode] = useState('');
   const [newPassword, setNewPassword] = useState('');
 
+  const navigation =
+    useNavigation<NativeStackNavigationProp<AuthenticationStackParamList>>();
+
   const handleSubmit = () => {
-    console.log('User pressed Submit');
+    console.log('Communicate with BE to verify code and set new password');
   };
 
   const handleBackToSignIn = () => {
-    console.log('User pressed do have an account');
+    navigation.navigate('SignIn');
   };
 
   return (
