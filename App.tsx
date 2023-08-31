@@ -17,7 +17,7 @@ import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
 function App(): JSX.Element {
   return (
     <SafeAreaView style={styles.root}>
-      <ResetPasswordScreen />
+      <SignInScreen />
     </SafeAreaView>
   );
 }
